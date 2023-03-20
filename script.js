@@ -4,7 +4,7 @@ var addTaskButton = document.getElementById("add-task");
 var newTaskInput = document.getElementById("task-input");
 var todoListContainer = document.getElementById("todo-list");
 var templateContainer = document.getElementById("list-item-template");
-var template = templateContainer.innerHTML
+var template = templateContainer.innerHTML;
 
 // Step 2 Write the behaviour
 
@@ -16,4 +16,4 @@ todoListContainer.insertAdjacentHTML('afterbegin', taskHTML);
 }
 // Step 3 Link to event handler 
 
-addTaskButton.addEventListener('click', onAddTaskClicked)
+addTaskButton.addEventListener('click', onAddTaskClicked);
