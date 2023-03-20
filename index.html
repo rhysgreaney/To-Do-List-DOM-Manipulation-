@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta name=“description” content=“This page…”>
-<meta name=“author” content=“A. Author">
-<title>Page Title</title>
-<link rel=“stylesheet” type=“text/css” href=“style.css”>
+  <meta charset="UTF-8">
+  <title>My Todo List</title>
+  <meta name="author" content="Michael Borck">
+  <meta name="description" content="Explore flatland and interact with its inhabitants">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
+
+
 <body>
-Content of the document......
-<script src=“script.js”></script>
-</body>
-</html>
+
+<h1>My Todo List</h1>
+  <form>
+    <label>
+      Task Name:
+      <input id="task-input" type="text" placeholder="Do assignment">
+    </label>
+    <button type="button" id="add-task">
+      Add Task
+    </button>
+  </form>
+  <ul id="todo-list">
+  </ul>
