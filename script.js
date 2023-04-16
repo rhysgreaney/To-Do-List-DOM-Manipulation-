@@ -24,6 +24,7 @@ function onTodoListContainerClicked(event) {
     targetElement.classList.remove("completed")
    }
 }
+
 // Step 3 link to event handler
 addTaskButton.addEventListener('click', onAddTaskClicked);
 todoListContainer.addEventListener('click', onTodoListContainerClicked);
