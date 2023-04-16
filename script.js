@@ -14,7 +14,7 @@ function onAddTaskClicked(event) {
 }
 
 function onTodoListContainerClicked(event) {
-   while (!targetElement.classList.contains("task")){
+   while (!targetElement.classList.contains(".task")){
     targetElement = targetElement.parentElement;
    } 
    var checkbox = targetElement.querySelector(".checkbox");
