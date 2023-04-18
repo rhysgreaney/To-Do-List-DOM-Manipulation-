@@ -18,20 +18,44 @@ function onAddTaskClicked(event) {
     var taskName = newTaskInput.value;
     newTaskInput.value = "";
     var taskHTML = template.replace("<!-- TASK_NAME -->", taskName);
-    todoListContainer.insertAdjacentHTML('afterbegin', taskHTML);
+    todoListContainer.insertAdjacentHTML('beforeend', taskHTML);
+
+    saveTasks(taskName, false)
 }
 
 function onTodoListContainerClicked(event) {
+
+   var targetElement = event.target;
+
    while (!targetElement.classList.contains("task")){
     targetElement = targetElement.parentElement;
    } 
+
    var checkbox = targetElement.querySelector(".checkbox");
+
    if (checkbox.checked){
     targetElement.classList.add("completed")
    } else {
     targetElement.classList.remove("completed")
    }
+
+   var taskNameElement = targetElement.querySelector(".task-name")
+   var taskName = taskNameElement.innerText;
+
+   saveTasks(taskName, checkbox.checked)
 }
+
+function showActiveTasks(){
+    var tasks = document.getElementsByClassName('task')
+    for (let i = 0; i < tasks.length; i++){
+        if (tasks[i].classList.contains("completed")){
+            tasks[i].style.display = "none";
+        } else {
+            tasks[i].style.display = "block";
+        }
+    }
+}
+
 
 // Step 3 link to event handler
 addTaskButton.addEventListener('click', onAddTaskClicked);
