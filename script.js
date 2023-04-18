@@ -90,3 +90,8 @@ function renderTasks(){
 // Step 3 link to event handler
 addTaskButton.addEventListener('click', onAddTaskClicked);
 todoListContainer.addEventListener('click', onTodoListContainerClicked);
+showActiveButton.addEventListener('click', showActiveTasks);
+showAllTaskButton.addEventListener('click', showAllTasks);
+showCompletedButton.addEventListener('click', showCompletedTasks);
+
+renderTasks();
