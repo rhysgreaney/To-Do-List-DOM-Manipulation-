@@ -56,6 +56,26 @@ function showActiveTasks(){
     }
 }
 
+functionShowAllTasks() {
+    var tasks = document.getElementsByClassName('task');
+    for (let i = 0; i < tasks.length; i++){
+        tasks[i].style.display = "block";
+    }
+}
+
+function showCompletedTasks(){
+    var tasks = document.getElementsByClassName('task');
+    for (let i = 0; i < tasks.length; i++){
+        if (tasks[i].classList.contains("completed")){
+            var element = tasks[i]
+
+            tasks[i].style.display = "none";
+        } else {
+            tasks[i].style.display = "block";
+        }
+        
+    }
+}
 
 // Step 3 link to event handler
 addTaskButton.addEventListener('click', onAddTaskClicked);
