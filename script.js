@@ -72,9 +72,19 @@ function showCompletedTasks(){
             tasks[i].style.display = "none";
         } else {
             tasks[i].style.display = "block";
-        }
-        
+        } 
     }
+}
+
+function renderTasks(){
+    for (i = 0; i < localStorage.length; i++);
+
+        var taskName = localStorage.key(i)
+        var isCompleted = localStorage.getItem(taskName) == "true";
+        var taskHTML = template.replace("<!--TASK_NAME-->, taskName");
+        if (!isCompleted){
+            todoListContainer.insertAdjacentElement('afterbegin, taskHTML');
+        }
 }
 
 // Step 3 link to event handler
