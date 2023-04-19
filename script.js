@@ -17,14 +17,13 @@ function saveTasks(name, isCompleted){
 function onAddTaskClicked(event) {
     var taskName = newTaskInput.value;
     newTaskInput.value = "";
-    var taskHTML = template.replace("<!-- TASK_NAME -->", taskName);
+    var taskHTML = template.replace("<!-- TASK_NAME -->, taskName");
     todoListContainer.insertAdjacentHTML('beforeend', taskHTML);
 
     saveTasks(taskName, false)
 }
 
-function onTodoListClicked(event) {
-
+function onTodoListClicked(event){
    var targetElement = event.target;
 
    while (!targetElement.classList.contains("task")){
@@ -34,9 +33,9 @@ function onTodoListClicked(event) {
    var checkbox = targetElement.querySelector(".checkbox");
 
    if (checkbox.checked){
-    targetElement.classList.add("completed")
+        targetElement.classList.add("completed")
    } else {
-    targetElement.classList.remove("completed")
+        targetElement.classList.remove("completed")
    }
 
    var taskNameElement = targetElement.querySelector(".task-name")
@@ -49,6 +48,7 @@ function showActiveTasks(){
     var tasks = document.getElementsByClassName('task')
     for (let i = 0; i < tasks.length; i++){
         if (tasks[i].classList.contains("completed")){
+            //set display property to none
             tasks[i].style.display = "none";
         } else {
             tasks[i].style.display = "block";
@@ -56,27 +56,28 @@ function showActiveTasks(){
     }
 }
 
-functionShowAllTasks() {
+function ShowAllTasks() {
     var tasks = document.getElementsByClassName('task');
     for (let i = 0; i < tasks.length; i++){
-        tasks[i].style.display = "block";
+        tasks[i].style.display = 'block'
     }
 }
 
-function showCompletedTasks(){
+function showCompletedTasks() {
     var tasks = document.getElementsByClassName('task');
     for (let i = 0; i < tasks.length; i++){
         if (tasks[i].classList.contains("completed")){
+            //get document you want to hide
             var element = tasks[i]
-
+            //set the display property to none
             tasks[i].style.display = "none";
         } else {
             tasks[i].style.display = "block";
         } 
     }
-}
 
-function renderTasks(){
+
+function renderTasks() {
     for (i = 0; i < localStorage.length; i++);
 
         var taskName = localStorage.key(i)
@@ -85,7 +86,8 @@ function renderTasks(){
         if (!isCompleted){
             todoListContainer.insertAdjacentElement('afterbegin, taskHTML');
         }
-}
+    }
+}                                    
 
 // Step 3 link to event handler
 addTaskButton.addEventListener('click', onAddTaskClicked);
