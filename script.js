@@ -95,5 +95,12 @@ todoListContainer.addEventListener('click', onTodoListClicked);
 showActiveButton.addEventListener('click', showActiveTasks);
 showAllTaskButton.addEventListener('click', showAllTasks);
 showCompletedButton.addEventListener('click', showCompletedTasks);
+checkbox.addEventListener('change', function() {
+    if (this.checked) {
+      taskElement.classList.add('completed');
+    } else {
+      taskElement.classList.remove('completed');
+    }
+  });
 
 renderTasks();
