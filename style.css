@@ -12,6 +12,10 @@ body {
 .task {
   list-style:none;
 }
+
+.task-name {
+  color: #000;
+}
   
 .task.completed {
   text-decoration: line-through;
