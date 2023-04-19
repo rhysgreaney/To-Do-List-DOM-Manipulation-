@@ -82,9 +82,9 @@ function renderTasks() {
 
         var taskName = localStorage.key(i)
         var isCompleted = localStorage.getItem(taskName) == "true";
-        var taskHTML = template.replace("<!-- TASK_NAME -->, taskName");
+        var taskHTML = template.replace("<!-- TASK_NAME -->", taskName);
         if (!isCompleted){
-            todoListContainer.insertAdjacentElement('afterbegin, taskHTML');
+            todoListContainer.insertAdjacentHTML('afterbegin, taskHTML');
         }
     }
 }                                    
