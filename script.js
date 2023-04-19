@@ -66,6 +66,9 @@ function showAllTasks() {
     }
 }
 
+/* please note I had issues with the "show completed" function, the button works
+but i am not sure this is how it was intended*/ 
+
 function showCompletedTasks() {
     var tasks = document.getElementsByClassName('task');
     for (let i = 0; i < tasks.length; i++){
