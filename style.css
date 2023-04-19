@@ -8,11 +8,14 @@ body {
   width: 600px;
   margin: 0 auto;
 }
-  
+
 .task {
   list-style:none;
 }
 
+/* Kept receiving errors with the text not being visible to the user on the site, 
+requested the assistance of ChatGPT, provided me with the below style class
+.task-name */
 .task-name {
   color: #000;
 }

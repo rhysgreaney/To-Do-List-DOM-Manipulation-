@@ -1,3 +1,6 @@
+/* please note ChatGPT assisted me with basic errors that occured throughout
+the coding phase, these included indents, misuse of quotation marks and semi-colons */
+
 // Step 1 find the element
 var addTaskButton = document.getElementById("add-task");
 var newTaskInput = document.getElementById("task-input");
